@@ -3,10 +3,13 @@ import math
 ###---Number-of-GPU
 NUM_OF_GPU=4
 DISTRIIBUTED_STRATEGY_GPUS=["gpu:0","gpu:1","gpu:2","gpu:3"]
-
+'''
+if want to resume training from the weights Set
+RESUME_TRAINING=1
+'''
 ###----Resume-Training
 RESUME_TRAINING=1
-RESUME_TRAIING_MODEL='/Local/Unet_SegTry/LungSEGWithDiseased_Model_March30_2020/LungSEGModel_0.02_1381.h5'
+RESUME_TRAIING_MODEL='/Path/of/the/model/weight/Model.h5'
 TRAINING_INITIAL_EPOCH=1381
 NUMBER_OF_CLASSES=1
 INPUT_PATCH_SIZE=(384,192,192, 1)
@@ -23,10 +26,10 @@ NUMBER_OF_PARALLEL_CALL=4
 PARSHING=2*BATCH_SIZE
 #--Callbacks-----
 ModelCheckpoint_MOTITOR='LUNGSegVal_loss'
-TRAINING_SAVE_MODEL_PATH='/Local/Unet_SegTry/LungSEGWithDiseased_Model_March30_2020/'
+TRAINING_SAVE_MODEL_PATH='/Path/to/save/model/weight/Model.h5'
 TRAINING_CSV='LungSEG_Model_March30_2020.csv'
 
 
 ####
-TRAINING_TF_RECORDS='/Local/nobackup/Xcat_Seg/ct_xcat/'
-VALIDATION_TF_RECORDS='/Local/nobackup/Xcat_Seg/Val_tfrecords2/'
+TRAINING_TF_RECORDS='/Training/tfrecords/path/'
+VALIDATION_TF_RECORDS='/Val/tfrecords/path/'
